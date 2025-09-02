@@ -1,0 +1,360 @@
+/* --- Basic Setup & Fonts --- */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/hero-image.png'); /* Using available image */
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5); /* Darkens the image so text is readable */
+}
+
+.hero-imag-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/promise.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5); /* Darkens the image so text is readable */
+}
+
+.hero-text {
+    z-index: 1;
+    padding: 20px;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.hero-text span {
+    display: block;
+    margin-top: 50px;
+    font-weight: 300;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* --- Main Story Layout --- */
+.story-container {
+    display: flex;
+    position: relative;
+}
+
+.map-container {
+    width: 50%;
+    position: sticky; /* This is the magic! */
+    top: 0;
+    height: 100vh;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.timeline-container {
+    width: 50%;
+    padding: 5vh 5%;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+/* --- Timeline Chapter Styling --- */
+.chapter {
+    min-height: 80vh; /* Give chapters space */
+    padding-bottom: 20vh;
+    opacity: 0.4; /* Inactive chapters are faded */
+    transition: opacity 0.5s ease-in-out;
+}
+
+.chapter.active {
+    opacity: 1; /* Active chapter is fully visible */
+}
+
+.chapter h2 {
+    font-size: 2.5rem;
+    color: #a55a4f; /* A warm, romantic color */
+    margin-bottom: 1rem;
+}
+
+.chapter h3 {
+    font-size: 1.8rem;
+    color: #c17f76; /* A softer, romantic color */
+    margin-bottom: 0.8rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.chapter p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.chapter img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.quote, .final-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    padding-left: 20px;
+    border-left: 3px solid #a55a4f;
+    margin: 30px 0;
+}
+
+.final-quote {
+    font-size: 1.5rem;
+    border: none;
+    text-align: center;
+    color: #a55a4f;
+}
+
+/* --- Responsive Design for Smaller Screens --- */
+@media (max-width: 768px) {
+    .story-container {
+        flex-direction: column;
+    }
+
+    .map-container {
+        width: 100%;
+        height: 50vh; /* Map takes less height on mobile */
+        position: relative; /* No longer sticky */
+    }
+
+    .timeline-container {
+        width: 100%;
+        padding: 5vh 8%;
+    }
+
+    .chapter {
+        min-height: auto;
+        padding-bottom: 10vh;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* --- Custom Avatar Markers --- */
+.custom-avatar-icon {
+    background: transparent !important;
+    border: none !important;
+}
+
+.avatar-marker {
+    text-align: center;
+    animation: bounceIn 0.6s ease-out;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+    position: relative;
+    z-index: 1000;
+    /* Debug: Make sure avatars are visible */
+    min-width: 80px;
+    min-height: 100px;
+    transition: all 0.3s ease;
+}
+
+.avatar-marker:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.2));
+}
+
+.avatar-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 3px solid white;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1001;
+    /* Debug: Ensure circle is visible */
+    background: #ff0000 !important;
+}
+
+.avatar-circle::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.avatar-marker:hover .avatar-circle::before {
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+.avatar-marker:hover .avatar-circle {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.avatar-emoji {
+    font-size: 24px;
+    z-index: 1002;
+    position: relative;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+    transition: all 0.3s ease;
+}
+
+.avatar-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #333;
+    background: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    white-space: nowrap;
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid rgba(0,0,0,0.05);
+    z-index: 1003;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Avatar-specific styles */
+.avatar-marker.husband .avatar-circle {
+    border-color: #4ecdc4;
+}
+
+.avatar-marker.wife .avatar-circle {
+    border-color: #ff6b9d;
+}
+
+.avatar-marker.together .avatar-circle {
+    border-color: #a55a4f;
+}
+
+/* Special glow effect for together markers */
+.avatar-marker.together .avatar-circle {
+    box-shadow: 0 4px 20px rgba(165, 90, 79, 0.3);
+}
+
+.avatar-marker.together:hover .avatar-circle {
+    box-shadow: 0 6px 25px rgba(165, 90, 79, 0.4);
+}
+
+/* Travel animation for avatars */
+.avatar-marker.traveling {
+    animation: travel 3s ease-in-out;
+}
+
+@keyframes travel {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Together effect when avatars meet */
+.avatar-marker.together-effect {
+    animation: togetherPulse 2s ease-in-out;
+}
+
+@keyframes togetherPulse {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+    }
+    25% {
+        transform: scale(1.2);
+        filter: drop-shadow(0 8px 20px rgba(165, 90, 79, 0.4));
+    }
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 6px 15px rgba(165, 90, 79, 0.3));
+    }
+    75% {
+        transform: scale(1.15);
+        filter: drop-shadow(0 7px 18px rgba(165, 90, 79, 0.35));
+    }
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+    }
+}
+
+/* Bounce animation for markers */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(20px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05) translateY(-5px);
+    }
+    70% {
+        transform: scale(0.9) translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}

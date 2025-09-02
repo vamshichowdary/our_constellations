@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+            <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-image"></div>
+        <div class="hero-text">
+            <h1>Our Constellations</h1>
+            <p>A story of distance, destiny, and my journey back to you.</p>
+            <p>Happy anniversary bujjammaaaaaaa!!!!💕✨🏔</p>
+            <span>&darr; Scroll to begin our journey &darr;</span>
+        </div>
+    </section>
+
+    <main class="story-container">
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+
+        <div class="timeline-container">
+            <div class="chapter" id="chapter1" data-aos="fade-up" data-lat1="17.601472" data-lon1="80.000444" data-city1="Mahabubabad, 1994" data-lat2="15.514056" data-lon2="80.033917" data-city2="Ongole, 1996" data-zoom="7">
+                <h2>1994 & 1996: Two Separate Worlds</h2>
+                <p>Our stories began in different cities in the same state, two small dots on a map, completely unaware of the other. You in Ongole, and me in Mahabubabad.</p>
+                <img src="images/buj.jpg" alt="bujjest">
+                <img src="images/me.png" alt="mee">
+            </div>
+
+            <div class="chapter" id="chapter2" data-aos="fade-up" data-lat1="17.3732" data-lon1="78.5200" data-city1="You in Hyderabad" data-lat2="17.340777" data-lon2="78.565722" data-city2="Me in Hyderabad" data-zoom="12">
+                <h2>2007: A Fateful Move</h2>
+                <p>My world shifted when my family moved to Hyderabad. Little did I know, this move would place me in the same city as my future. We were in the same city, yet worlds apart.</p>
+            </div>
+            
+            <div class="chapter" id="chapter3" data-aos="fade-up" data-lat1="17.334777" data-lon1="78.559722" data-city1="Both of us, Hyderabad" data-zoom="11">
+                <h2>2010-2012: Sri Chaitanya Satya Sai complex</h2>
+                <p>Our paths finally crossed. We walked the same hallways of Sri Chaitanya, but we were just faces in the crowd to each other. We saw each other, but we didn't truly *see* each other yet.</p>
+                <img src="images/clg.png" alt="Our college">
+            </div>
+
+            <div class="chapter" id="chapter4" data-aos="fade-up" data-lat1="29.8543" data-lon1="77.8880" data-city1="Me in Roorkee" data-lat2="17.334777" data-lon2="78.559722" data-city2="You in Hyderabad" data-zoom="5">
+                <h2>2013: The First "hi"</h2>
+                <p>I moved to Roorkee for my undergrad, and you stayed in Hyderabad. The distance grew, but technology brought us a connection. A simple Facebook message started it all. Our friendship began to quietly bloom across the miles.</p>
+                <p class="quote">hi</p>
+                <img src="images/hi.png" alt="hi">
+            </div>
+            
+            <div class="chapter" id="chapter5" data-aos="fade-up" data-lat1="28.7041" data-lon1="77.1025" data-city1="Me in Delhi" data-lat2="17.334777" data-lon2="78.559722" data-city2="You in Hyderabad" data-zoom="5">
+                <h2>2016-2019: Ships in the Night</h2>
+                <p>I moved to Delhi for work. We were still in touch... on WhatsApp.</p>
+            </div>
+
+            <div class="chapter" id="chapter5a" data-aos="fade-up" data-lat1="17.336777" data-lon1="78.561722" data-city1="Me visiting Hyderabad" data-lat2="17.5195" data-lon2="78.3791" data-city2="You in Hyderabad" data-zoom="13">
+                <h3>Story of my life</h3>
+                <p>Whenever I visited Hyderabad, I came close to you, yet couldn't find the courage to ask to meet you. The distance felt even greater when I was physically near you.</p>
+            </div>
+
+            <div class="chapter" id="chapter5ab" data-aos="fade-up" data-lat1="28.7041" data-lon1="77.1025" data-city1="Me in Delhi" data-lat2="17.334777" data-lon2="78.559722" data-city2="You in Hyderabad" data-zoom="5">
+                <h3>Back to Distance</h3>
+                <p>I returned to Delhi while you stayed in Hyderabad. The physical distance between us grew again, but our WhatsApp conversations kept us connected across the miles.</p>
+                <img src="images/stuff.png" alt="Random stuff">
+            </div>
+
+            <div class="chapter" id="chapter5b" data-aos="fade-up" data-lat1="28.7061" data-lon1="77.1045" data-city1="You visiting Delhi" data-lat2="28.5840" data-lon2="77.3607" data-city2="Me in Delhi" data-zoom="13">
+                <h3>You visited Delhi</h3>
+                <p>When you visited Delhi, I was right there in the same city. But again, I couldn't gather the courage to tell you I wanted to meet. We were so close, yet so far apart.</p>
+            </div>
+
+            <!-- <div class="chapter" id="chapter5c" data-aos="fade-up" data-lat1="28.7041" data-lon1="77.1025" data-city1="Me in Delhi" data-lat2="17.334777" data-lon2="78.559722" data-city2="You in Hyderabad" data-zoom="5">
+                <h3>WhatsApp Distance</h3>
+                <p>But we still only stayed in touch on WhatsApp talking random stuff. Even though we were physically close at times, our hearts remained distant.</p>
+                <img src="images/stuff.png" alt="Random stuff">
+            </div> -->
+            
+            <div class="chapter" id="chapter6" data-aos="fade-up" data-lat1="34.4208" data-lon1="-119.6982" data-city1="Me in Santa Barbara" data-lat2="17.334777" data-lon2="78.559722" data-city2="You in Hyderabad" data-zoom="3">
+                <h2>2019: Oceans Apart</h2>
+                <p>I moved to the US. The distance between us now became oceans. We still chatted, but the unspoken feelings remained just that—unspoken. I often wondered what you were thinking, thousands of miles away.</p>
+            </div>
+            
+            <div class="chapter" id="chapter7" data-aos="fade-up" data-lat1="34.4208" data-lon1="-119.6982" data-city1="Me in Santa Barbara" data-lat2="17.334777" data-lon2="78.559722" data-city2="You in Hyderabad" data-zoom="3">
+                <h2>2021: A Leap of Faith</h2>
+                <p>And then, you did something braver than I ever could. You built up the courage and sent a message that changed everything. It was the spark that we both needed.</p>
+                <p class="quote">"I think I've had a crush on you."</p>
+                <p>But little did I know that I would be making the biggest mistake of my life. Everything I wanted was in front of me. But only the stupidity in me prevailed.</p>
+                <img src="images/IMG_3942.png" alt="Random stuff">
+            </div>
+
+            <div class="chapter" id="chapter8" data-aos="fade-up" data-lat1="34.4208" data-lon1="-119.6982" data-city1="Me in Santa Barbara" data-lat2="17.334777" data-lon2="78.559722" data-city2="You in Hyderabad" data-zoom="3">
+                <h2>2022: Was I Too Late?</h2>
+                <p>Time passed, and a distance grew between us after your message. But I could never forget it. I finally gathered my own courage and messaged you, hoping I hadn't lost my chance. The universe was on my side. You were still waiting for me.</p>
+                <img src="images/calls.JPG" alt="calls">
+            </div>
+
+            <div class="chapter" id="chapter9" data-aos="fade-up" data-lat1="17.334777" data-lon1="78.559722" data-city1="Us, Together at last. Oct 2022" data-zoom="12">
+                <h2>October 2022: After All This Time</h2>
+                <p>I flew to Hyderabad and saw you for the first time since we were teenagers. It felt like no time had passed at all. Seeing you again, I knew this was real. This was my future.</p>
+                <img src="images/IMG_5154.jpeg" alt="Our first meeting in 2022">
+            </div>
+
+            <div class="chapter" id="chapter10" data-aos="fade-up" data-lat1="17.334777" data-lon1="78.559722" data-city1="Us, Engaged in Hyderabad" data-zoom="12">
+                <h2>March 2023: Engaged!</h2>
+                <p>I came back to India again, this time to make a promise. We got engaged!</p>
+                <img src="images/engagement.png" alt="Our Engagement">
+            </div>
+
+            <div class="chapter" id="chapter10b" data-aos="fade-up" data-lat1="34.4208" data-lon1="-119.6982" data-city1="Me in Santa Barbara" data-lat2="17.334777" data-lon2="78.559722" data-city2="You in India" data-zoom="3">
+                <h3>Engaged but Apart</h3>
+                <p>But once again, distance won the battle. After our engagement, I returned to Santa Barbara while you stayed in India. We were engaged closer then ever before, yet the ocean still separated us. The promise of forever made the distance both sweeter and more painful.</p>
+                <img src="images/IMG_5364.PNG" alt="calls again">
+            </div>
+
+            <div class="chapter" id="chapter11" data-aos="fade-up" data-lat1="17.334777" data-lon1="78.559722" data-city1="Us, Married in Hyderabad" data-zoom="12">
+                <h2>September 2023: Mr. & Mrs.</h2>
+                <p>We got married! It was the happiest day of my life. Surrounded by family and friends, we finally became husband and wife. The joy was overwhelming, and for that moment, everything was perfect.</p>
+                <img src="images/wedding.png" alt="Our Wedding Day">
+            </div>
+
+            <div class="chapter" id="chapter11b" data-aos="fade-up" data-lat1="34.4208" data-lon1="-119.6982" data-city1="Me back in Santa Barbara" data-lat2="17.334777" data-lon2="78.559722" data-city2="You in Hyderabad" data-zoom="3">
+                <h3>Another Ocean Apart</h3>
+                <p>But the challenges weren't over. I had to return to the US alone just days after our wedding. Being married but living continents apart was one of the hardest things we've ever done. The distance felt even more painful now that we were officially husband and wife.</p>
+                <img src="images/IMG_8234.jpeg" alt="distance">
+            </div>
+
+            <div class="chapter" id="chapter12" data-aos="fade-up" data-lat1="34.4208" data-lon1="-119.6982" data-city1="Our Home in Santa Barbara" data-zoom="10">
+                <h2>September 2024: Our Home in Santa Barbara</h2>
+                <p>After a year of waiting, we won the war against distance. We started our life together in Santa Barbara. The wait was finally over. All the goodbyes had led to this one beautiful hello.</p>
+                <img src="images/my.png" alt="Us in Santa Barbara">
+            </div>
+
+            <div class="chapter" id="chapter13" data-aos="fade-up" data-lat1="40.4406" data-lon1="-79.9959" data-city1="Me in Pittsburgh (Summer 2025)" data-lat2="34.4208" data-lon2="-119.6982" data-city2="You in Santa Barbara" data-zoom="4">
+                <h2>Summer 2025: Just One More Goodbye</h2>
+                <p>Our story had one more test of distance. My internship took me to Pittsburgh for the summer. It was hard, but we knew it was temporary. We knew we were experts at this by now.</p>
+                <img src="images/IMG_1378.jpeg" alt="PIT">
+            </div>
+
+            <div class="chapter" id="finale" data-aos="fade-up" data-lat1="37.6485" data-lon1="-118.9721" data-city1="Us Together in Mammoth Lakes" data-zoom="10">
+                <h2>Today: Our Anniversary</h2>
+                <p>And now, we're celebrating our anniversary together in the beautiful Mammoth Lakes, surrounded by the majestic Sierra Nevada mountains. Our winding path, with all its goodbyes and hellos, has made our bond unbreakable. The distance was never an obstacle; it was just the space our love grew to fill.</p>
+                <p class="final-quote">Happy Anniversary bujjamma! To a lifetime of being in the same place, at the same time.</p>
+                <img src="images/20250831_132858.jpg" alt="Us now">
+            </div>
+        </div>
+    </main>
+
+    <section class="hero">
+        <div class="hero-imag-2"></div>
+        <div class="hero-text">
+            <p>No matter the distance. No matter the time. I know you will pull me in, wherever I am</p>
+            <p>Because we are One!</p>
+            <h1>Maruvaarthai Pesaathe...</h1>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          once: true, // Whether animation should happen only once - while scrolling down
+          duration: 1000 // values from 0 to 3000, with step 50ms
+      });
+    </script>
+
+            <script src="script.js"></script>
+
+</body>
+</html>
