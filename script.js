@@ -1,73 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     // --- MOBILE LAYOUT HANDLING ---
     function handleMobileLayout() {
-        if (window.innerWidth <= 768) {
-            const hero = document.querySelector('.hero');
-            const finalHero = document.querySelector('.hero:last-of-type');
-            const storyContainer = document.querySelector('.story-container');
-            const mapContainer = document.querySelector('.map-container');
-            const timelineContainer = document.querySelector('.timeline-container');
-            
-            function updateMobileLayout() {
-                const heroBottom = hero.offsetTop + hero.offsetHeight;
-                const storyBottom = storyContainer.offsetTop + storyContainer.offsetHeight;
-                const finalHeroTop = finalHero ? finalHero.offsetTop : 0;
-                const scrollTop = window.pageYOffset;
-                
-                // Add some buffer to prevent infinite scroll issues
-                const buffer = 50;
-                
-                // Check if we've scrolled past the story content (near final hero)
-                if (scrollTop >= (storyBottom - buffer)) {
-                    // Hide fixed layout to allow access to final hero
-                    mapContainer.style.display = 'none';
-                    timelineContainer.style.display = 'none';
-                    console.log('Showing final hero section - scrollTop:', scrollTop, 'storyBottom:', storyBottom);
-                } else if (scrollTop >= (heroBottom - buffer)) {
-                    // Show fixed layout after first hero
-                    mapContainer.style.position = 'fixed';
-                    mapContainer.style.top = '0';
-                    mapContainer.style.zIndex = '10';
-                    mapContainer.style.display = 'block';
-                    timelineContainer.style.position = 'fixed';
-                    timelineContainer.style.bottom = '0';
-                    timelineContainer.style.zIndex = '5';
-                    timelineContainer.style.height = '50vh';
-                    timelineContainer.style.overflowY = 'auto';
-                    timelineContainer.style.display = 'block';
-                    console.log('Showing story sections');
-                } else {
-                    // Normal layout when in first hero
-                    mapContainer.style.position = 'relative';
-                    mapContainer.style.top = 'auto';
-                    mapContainer.style.zIndex = 'auto';
-                    mapContainer.style.display = 'block';
-                    timelineContainer.style.position = 'relative';
-                    timelineContainer.style.bottom = 'auto';
-                    timelineContainer.style.zIndex = 'auto';
-                    timelineContainer.style.height = '50vh';
-                    timelineContainer.style.overflowY = 'auto';
-                    timelineContainer.style.display = 'block';
-                    console.log('In first hero section');
-                }
-            }
-            
-            // Throttle function to prevent excessive scroll events
-            let scrollTimeout;
-            function throttledUpdateMobileLayout() {
-                if (scrollTimeout) {
-                    clearTimeout(scrollTimeout);
-                }
-                scrollTimeout = setTimeout(updateMobileLayout, 10);
-            }
-            
-            // Initial check
-            updateMobileLayout();
-            
-            // Update on scroll with throttling
-            window.addEventListener('scroll', throttledUpdateMobileLayout);
-            window.addEventListener('resize', updateMobileLayout);
-        }
+        // Mobile layout disabled - using default CSS layout
+        console.log('Mobile layout handling disabled - using default CSS layout');
+        return;
     }
     
     // Initialize mobile layout handling
@@ -267,6 +203,10 @@ document.addEventListener('DOMContentLoaded', function () {
         threshold: 0
     });
 
+    // --- FINAL HERO OBSERVER ---
+    // Disabled along with mobile layout
+    console.log('Final hero observer disabled - using default layout');
+
     // Observe each chapter
     chapters.forEach(chapter => {
         observer.observe(chapter);
@@ -288,8 +228,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const hero = document.querySelector('.hero');
             const finalHero = document.querySelector('.hero:last-of-type');
             const storyContainer = document.querySelector('.story-container');
+            console.log('=== MOBILE LAYOUT DEBUG ===');
             console.log('Hero bottom:', hero.offsetTop + hero.offsetHeight);
             console.log('Story bottom:', storyContainer.offsetTop + storyContainer.offsetHeight);
+            console.log('Story height:', storyContainer.offsetHeight);
             console.log('Final hero exists:', !!finalHero);
             if (finalHero) {
                 console.log('Final hero position:', finalHero.offsetTop);
@@ -297,6 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('Final hero display:', window.getComputedStyle(finalHero).display);
                 console.log('Final hero visibility:', window.getComputedStyle(finalHero).visibility);
             }
+            console.log('========================');
         }
     }
 });
