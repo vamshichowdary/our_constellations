@@ -43,11 +43,13 @@ h1, h2 {
     background-size: cover;
     background-position: center;
     filter: brightness(0.5); /* Darkens the image so text is readable */
+    z-index: 1;
 }
 
 .hero-text {
-    z-index: 1;
+    z-index: 2;
     padding: 20px;
+    position: relative;
 }
 
 .hero-text h1 {
@@ -159,28 +161,81 @@ h1, h2 {
 
 /* --- Responsive Design for Smaller Screens --- */
 @media (max-width: 768px) {
+    .hero {
+        height: 100vh;
+        position: relative;
+    }
+
+    /* Position the final hero section after story container */
+    .hero:last-of-type {
+        display: block;
+        position: relative;
+        height: 100vh;
+        margin-top: 0;
+    }
+
+    /* Ensure final hero text is visible */
+    .hero:last-of-type .hero-text {
+        z-index: 10;
+        position: relative;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
     .story-container {
         flex-direction: column;
+        height: auto; /* Change from 100vh to auto to allow natural height */
+        overflow: visible; /* Change from hidden to visible */
+        position: relative;
+        z-index: 1;
+        /* Remove display: none to allow scrolling */
     }
 
     .map-container {
         width: 100%;
-        height: 50vh; /* Map takes less height on mobile */
-        position: relative; /* No longer sticky */
+        height: 50vh; /* Map takes top half of screen */
+        position: relative; /* Will be changed to fixed by JS */
+        top: 0;
+        left: 0;
+        z-index: 10;
     }
 
     .timeline-container {
         width: 100%;
-        padding: 5vh 8%;
+        height: 50vh; /* Timeline takes bottom half of screen */
+        position: relative; /* Will be changed to fixed by JS */
+        bottom: 0;
+        left: 0;
+        padding: 2vh 8%;
+        overflow-y: auto; /* Make timeline scrollable */
+        box-sizing: border-box;
+        z-index: 5;
+        background-color: #fdfdfd; /* Ensure background is visible */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
+    /* When timeline is fixed, ensure it doesn't block final hero */
+    .timeline-container.fixed {
+        position: fixed;
+        bottom: 0;
+        z-index: 5;
     }
 
     .chapter {
-        min-height: auto;
-        padding-bottom: 10vh;
+        min-height: 60vh; /* Ensure chapters have enough height to be visible */
+        padding-bottom: 5vh;
+        margin-bottom: 2vh;
+        background-color: transparent;
     }
     
     .hero-text h1 {
         font-size: 2.5rem;
+    }
+
+    /* Ensure AOS elements are visible on mobile */
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
 
